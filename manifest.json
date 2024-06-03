@@ -1,7 +1,7 @@
 {
-  "name": "backend-course",
-  "vendor": "vtex",
-  "version": "0.0.2",
+  "name": "service-master-data-triggers",
+  "vendor": "compracerta",
+  "version": "1.0.0",
   "title": "Backend Course",
   "description": "Reference app for the Backend Course",
   "builders": {
@@ -11,9 +11,15 @@
     "prereleasy": "bash lint.sh"
   },
   "credentialType": "absolute",
-  "policies": [],
-  "dependencies": {
-    "vtex.events-example": "0.x"
-  },
+  "policies": [
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "compracerta.vtexcommercestable.com.br",
+        "path": "/*"
+      }
+    }
+  ],
+  "dependencies": {},
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }

@@ -1,13 +1,21 @@
 {
   "memory": 128,
   "ttl": 10,
-  "timeout": 10,
+  "timeout": 1000,
   "minReplicas": 2,
   "maxReplicas": 10,
   "workers": 4,
   "routes": {
-    "analytics": {
-      "path": "/_v/app/analytics/realTime",
+    "updateWorkingTime": {
+      "path": "/_v/app/updateworkingtime/:idClient",
+      "public": true
+    },
+    "updateDateLead": {
+      "path": "/_v/app/updatedatelead/:idClient",
+      "public": false
+    },
+    "updateDateLeadPublic": {
+      "path": "/_v/app/updatedateleadpublic/:idClient",
       "public": true
     }
   }
